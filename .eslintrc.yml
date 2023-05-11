@@ -1,0 +1,19 @@
+env:
+  commonjs: true
+  es2021: true
+parser: "@typescript-eslint/parser"
+extends: standard-with-typescript
+overrides: []
+parserOptions:
+  ecmaVersion: latest
+  project: tsconfig.json
+rules:
+#  indent: [error, 4]
+  "@typescript-eslint/indent": [error, 3]
+  "@typescript-eslint/restrict-plus-operands": off
+  "@typescript-eslint/prefer-nullish-coalescing": off
+  "@typescript-eslint/no-var-requires": off
+  "@typescript-eslint/strict-boolean-expressions": off
+  "@typescript-eslint/restrict-template-expressions": off
+  "@typescript-eslint/explicit-function-return-type": off
+  "@typescript-eslint/prefer-optional-chain": off
