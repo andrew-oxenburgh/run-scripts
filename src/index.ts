@@ -1,3 +1,3 @@
 
-const {handleOpts} = require('./handleOpts.ts')
+const { handleOpts } = require('./handleOpts')
 handleOpts()
