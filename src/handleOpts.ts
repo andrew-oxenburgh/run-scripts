@@ -12,7 +12,13 @@ module.exports = {
         program.command('menu')
             .description('show all scripts available in the local package.json')
             .action(() => {
-                require('./scriptsTable').showScripts()
+                require('./commands/scriptsTable').showScripts()
+            })
+
+        program.command('info')
+            .description('show various metrics about the current project')
+            .action(() => {
+                require('./commands/info').command()
             })
 
         program.parse()

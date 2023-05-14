@@ -1,7 +1,5 @@
-import path from 'path'
 import { exec, type ExecException } from 'child_process'
-
-const fs = require('fs')
+import * as utils from '../utils'
 const term = require('terminal-kit').terminal
 const R = require('ramda')
 // import { type ExecException } from 'child_process'
@@ -38,8 +36,7 @@ const resolve = (command: string): void => {
 
 module.exports = {
     showScripts: () => {
-        const filepath = path.resolve(process.cwd(), 'package.json')
-        const scripts = JSON.parse(fs.readFileSync(filepath, 'utf8')).scripts
+        const scripts = utils.readPackageFile().scripts
         const table =
             R.reduce((acc, val) => {
                 acc.push((val[0].padEnd(15) + ': ' + val[1]))
